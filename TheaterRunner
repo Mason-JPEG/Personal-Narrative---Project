@@ -1,0 +1,42 @@
+import org.code.theater.*;
+import org.code.media.*;
+
+public class TheaterRunner {
+  public static void main(String[] args) {
+
+    // Create any 2D arrays & variables to be passed as parameters to constructor
+
+ ImageFilter[][] images = {
+      // row 0 --> Jeeps
+      { new ImageFilter("IMG_5012.jpeg"), new ImageFilter("IMG_3289.jpeg"), new ImageFilter("IMG_3628.jpeg"), null },
+      // row 1 --> Lambo
+      { new ImageFilter("IMG_1409.jpeg"), new ImageFilter("IMG_9594.jpeg"), new ImageFilter("IMG_9632.jpeg"),  new ImageFilter("IMG_0358.jpeg") },
+      // row 2 --> Ferrari
+      { new ImageFilter("IMG_1382.jpeg"), new ImageFilter("IMG_9992.jpeg"), new ImageFilter("IMG_9570.jpeg"), new ImageFilter("IMG_1405.jpeg")  },
+      // row 3 --> BMW
+      { new ImageFilter("IMG_1384-(1).jpeg"), new ImageFilter("IMG_9561.jpeg"), new ImageFilter("IMG_0344.jpeg"), new ImageFilter("IMG_0346.jpeg") },
+    };
+
+    
+int[][] topSpeed = {
+  // Jeeps
+  {110, 115, 120, 105},
+  // Lamborghinis
+  {202, 217, 211, 221},
+  // Ferraris
+  {199, 211, 218, 230}
+};
+    
+    // Instantiate Scene subclass objects
+    SceneOne scene1 = new SceneOne(images);
+    SceneTwo scene2 = new SceneTwo(topSpeed);
+    
+    // Call drawScene methods in each subclass
+    scene1.drawScene();
+    scene2.drawScene();
+    
+    // Play scenes in Theater, in order of arguments
+    Theater.playScenes(scene1, scene2);
+    
+  }
+}

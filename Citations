@@ -1,0 +1,14 @@
+What I prompted:
+Help me create a returning method for my scene 1 and explain the code. (paste code)
+----------------------------------------------------------------------
+What response I recieved:
+public int countImagesInRow(int row) {
+    int count = 0;
+    for (int col = 0; col < images[row].length; col++) {
+        if (images[row][col] != null) {
+            count++;
+        }
+    }
+    return count;
+}
+----------------------------------------------------------------------
