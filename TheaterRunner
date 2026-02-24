@@ -1,6 +1,9 @@
 import org.code.theater.*;
 import org.code.media.*;
 
+/*
+ * Runs the theater program by creating scenes and playing them in order.
+ */
 public class TheaterRunner {
   public static void main(String[] args) {
 
@@ -17,7 +20,9 @@ public class TheaterRunner {
       { new ImageFilter("IMG_1384-(1).jpeg"), new ImageFilter("IMG_9561.jpeg"), new ImageFilter("IMG_0344.jpeg"), new ImageFilter("IMG_0346.jpeg") },
     };
 
-    
+   /*
+   * 2D array storing top speed values
+   */
 int[][] topSpeed = {
   // Jeeps
   {110, 115, 120, 105},

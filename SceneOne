@@ -6,7 +6,10 @@ public class SceneOne extends Scene {
   /** Instance Variables */
     private ImageFilter[][] images;
 
-  /** Constructor */
+   /*
+   * Constructs SceneOne using a 2D array of images.
+   */ 
+  
   public SceneOne(ImageFilter[][] images) {
     this.images = images;
   }
@@ -20,7 +23,12 @@ public class SceneOne extends Scene {
     drawLamboImages();
     drawFerrariImages();
     drawBmwImages();
+     playSound("Vroom.wav");
   }
+  
+  /*
+   * Displays an introductory message to the viewer 
+   */
 
 public void displayCarNames() {
     clear("white");             
@@ -30,6 +38,7 @@ public void displayCarNames() {
 }
   /**
    * Draws all images in row zero of images
+   * Calls the negative filter
    */
   public void drawJeepImages() {
     for (ImageFilter img : images[0]) {
@@ -49,6 +58,7 @@ public void displayCarNames() {
   
   /**
    * Draws all images in first row of images 
+   * Calls Sepia Filter
    */
   public void drawLamboImages() {
     for (ImageFilter img : images[1]) {
@@ -69,6 +79,7 @@ public void displayCarNames() {
   
   /**
    * Draws all images in second row of images 
+   * Calls Colorize Filter
    */
   public void drawFerrariImages() {
     for (ImageFilter img : images[2]) {
@@ -83,7 +94,10 @@ public void displayCarNames() {
       pause(1);
     }
   }
-
+/**
+   * Draws all images in third row of images 
+   * Calls Sharpen Filter
+   */
   public void drawBmwImages() {
     for (ImageFilter img : images[3]) {
       clear("white");
@@ -97,7 +111,11 @@ public void displayCarNames() {
       pause(1);
     }
   }
-// other methods
+  
+/*
+   * Counts how many valid images exist in a given row.
+   */
+  
   public int countImagesInRow(int row) {
     int count = 0;
     for (int col = 0; col < images[row].length; col++) {

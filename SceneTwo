@@ -1,18 +1,24 @@
 import org.code.theater.*;
 import org.code.media.*;
 
+/*
+ * SceneTwo displays average top speed statistics for car brands.
+ */
+
 public class SceneTwo extends Scene {
 
   /** Instance Variables */
   private int[][] topSpeed;
   
-  /** Constructor */
+  /*
+   * Constructs SceneTwo using a 2D array of speeds.
+   */
   public SceneTwo(int[][] topSpeed) {
     this.topSpeed = topSpeed;
   }
 
-  /**
-   * Top-level drawScene method which will draw the whole animation
+  /*
+   * Draws the scene title and speed statistics
    */
  public void drawScene() {
     drawText("Top Speeds: ", 80, 40);
@@ -21,6 +27,9 @@ public class SceneTwo extends Scene {
     drawSpeedStats();
   }
 
+  /*
+   * Displays average speeds for each car brand
+   */
   public void drawSpeedStats() {
     for (int row = 0; row < topSpeed.length; row++) {
       int average = getAverageSpeed(row);
@@ -39,9 +48,12 @@ public class SceneTwo extends Scene {
     }
   }
 
-  // other methods...
+  /*
+   * Calculates the average speed for a row
+   */
   public int getAverageSpeed(int row) {
     int total = 0;
+   // Sum all speeds in the row
     for (int col = 0; col < topSpeed[row].length; col++) {
       total += topSpeed[row][col];
     }

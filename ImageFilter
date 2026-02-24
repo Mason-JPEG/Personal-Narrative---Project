@@ -10,7 +10,9 @@ public class ImageFilter extends ImagePlus {
     super(fileName);
   }
 
-  // Add filter methods here...
+/*
+  * Negative image filter 
+  */
   
   public void makeNegative() {
     Pixel[][] pixels = this.getImagePixels();
@@ -26,7 +28,11 @@ public class ImageFilter extends ImagePlus {
       }
     }
   }
-    
+
+  /*
+  * Sepia Image Filter
+  */
+  
  public void applySepia() {
     Pixel[][] pixels = this.getImagePixels();
 
@@ -58,7 +64,11 @@ public class ImageFilter extends ImagePlus {
       }
     }
  }
- 
+
+  /*
+  * Colorize Image Filter
+  */
+  
      public void colorize() {
     Pixel[][] pixels = getImagePixels();
 
@@ -92,6 +102,10 @@ public class ImageFilter extends ImagePlus {
     }
      }
 
+  /*
+  * Sharpen Image Filter
+  */
+  
          public void sharpen() {
   Pixel[][] pixels = getImagePixels();
 
